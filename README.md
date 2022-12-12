@@ -32,6 +32,8 @@ Cela veut dire que l'utilisation d'un algorithme de tri n'optimise pas le probl�
 ### Hypothèse d'une solution optimisée
 J'en ai conclu que, tant que j'utilisais des listes pour résoudre le problème, je ne pourrais pas optimiser la complexité en O(n²).
 Je pense donc qu'il faudrait une autre structure de donnée plus efficace afin de trouver plus rapidement si, pour chaque joueur, il existe un autre joueur plus jeune et plus fort.
+
 Une idée serait qu'à partir de la liste de joueurs de base, on trouve une formule qui, à partir de l'âge et du score elo d'un joueur, lui décerne un "poids".
 Puis, grâce à cette liste de poids, on disposerait tous les joueurs dans un graphe où tous ceux qui n'ont pas de joueurs plus jeune et plus fort qu'eux se retrouvent en haut du graphe, au même niveau.
+
 De cette manière, on aurait directement la liste des champions avec une complexité en O(n), car on devrait faire n calculs pour avoir tous les poids de la liste et les mettre dans un graphe.
